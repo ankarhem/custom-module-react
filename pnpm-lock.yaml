@@ -11,6 +11,7 @@ specifiers:
   react: ^18.2.0
   react-dom: ^18.2.0
   rollup-plugin-livereload: ^2.0.5
+  svelte: ^3.53.1
   typescript: ^4.6.4
   vite: ^3.2.3
 
@@ -19,7 +20,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
 
 devDependencies:
-  '@norce/checkout-lib': 0.1.0-pre.1
+  '@norce/checkout-lib': 0.1.0-pre.1_svelte@3.53.1
   '@types/node': 18.11.9
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.9
@@ -27,6 +28,7 @@ devDependencies:
   child_process: 1.0.2
   http-server: 14.1.1
   rollup-plugin-livereload: 2.0.5
+  svelte: 3.53.1
   typescript: 4.9.3
   vite: 3.2.4_@types+node@18.11.9
 
@@ -355,8 +357,10 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@norce/checkout-lib/0.1.0-pre.1:
+  /@norce/checkout-lib/0.1.0-pre.1_svelte@3.53.1:
     resolution: {integrity: sha512-SncsyrBBZDoZpVykEbvmF5wAH/u28PWDXTNm0QpfJEWk4d8hX1gcxQ6xhngTuYX8U+r4avHgWFykFzH9/MXBTg==}
+    peerDependencies:
+      svelte: ^3.x.x
     dependencies:
       openapi-typescript-fetch: 1.1.3
       svelte: 3.53.1

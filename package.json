@@ -22,6 +22,7 @@
     "child_process": "^1.0.2",
     "http-server": "^14.1.1",
     "rollup-plugin-livereload": "^2.0.5",
+    "svelte": "^3.53.1",
     "typescript": "^4.6.4",
     "vite": "^3.2.3"
   }

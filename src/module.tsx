@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 export type MountProps = {
-  Checkout: Checkout;
+  Checkout: typeof Checkout;
   EventEmitter: typeof CheckoutEventEmitter;
 };
 
@@ -51,3 +51,21 @@ const unmount = (instances: Instances, el: ShadowRoot) => {
     console.log('Tried to unmount an already unmounted instance');
   }
 };
+
+// Store hooks helper
+import { useEffect, useState } from 'react';
+import { derived, get, readable, Readable } from 'svelte/store';
+
+const unset: any = Symbol();
+
+export function useReadable<T>(store: Readable<T>): T {
+  const [value, set] = useState<T>(unset as unknown as T);
+
+  useEffect(() => store.subscribe(set), [store]);
+
+  return value === unset ? get(store) : value;
+}
+
+// Re-export svelte's implementations of the stores.
+export { get, readable, derived };
+export type { Readable };
