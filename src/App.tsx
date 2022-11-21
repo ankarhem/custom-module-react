@@ -1,3 +1,4 @@
+import css from './index.css?inline';
 import { EventPayload, Events } from '@norce/checkout-lib';
 import { useEffect } from 'react';
 import { CheckoutProvider, useCheckoutContext } from './CheckoutProvider';
@@ -26,14 +27,19 @@ function App() {
     };
   }, []);
 
-  return <div>{Checkout.order.id}</div>;
+  return (
+    <div className="container mx-auto bg-[#f1d0d1]">{Checkout.order.id}</div>
+  );
 }
 
 function AppWrapper(props: MountProps) {
   return (
-    <CheckoutProvider value={props}>
-      <App />
-    </CheckoutProvider>
+    <>
+      <style dangerouslySetInnerHTML={{ __html: css }} />
+      <CheckoutProvider value={props}>
+        <App />
+      </CheckoutProvider>
+    </>
   );
 }
 
