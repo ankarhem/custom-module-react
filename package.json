@@ -1,0 +1,28 @@
+{
+  "name": "custom-module-react",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "http-server ./dist -p 4173 --cors='*' -c-1",
+    "dev": "SERVE=true vite build --watch",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@norce/checkout-lib": "0.1.0-pre.1",
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@vitejs/plugin-react": "^2.2.0",
+    "child_process": "^1.0.2",
+    "http-server": "^14.1.1",
+    "rollup-plugin-livereload": "^2.0.5",
+    "typescript": "^4.6.4",
+    "vite": "^3.2.3"
+  }
+}
