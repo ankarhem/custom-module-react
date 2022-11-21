@@ -1,8 +1,7 @@
-import css from './index.css?inline';
 import { EventPayload, Events } from '@norce/checkout-lib';
 import { useEffect } from 'react';
 import { CheckoutProvider, useCheckoutContext } from './CheckoutProvider';
-import { MountProps } from './module';
+import { MountProps } from '@norce/module-adapter-react';
 
 function App() {
   const { Checkout, EventEmitter } = useCheckoutContext();
@@ -34,12 +33,9 @@ function App() {
 
 function AppWrapper(props: MountProps) {
   return (
-    <>
-      <style dangerouslySetInnerHTML={{ __html: css }} />
-      <CheckoutProvider value={props}>
-        <App />
-      </CheckoutProvider>
-    </>
+    <CheckoutProvider value={props}>
+      <App />
+    </CheckoutProvider>
   );
 }
 

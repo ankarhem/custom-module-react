@@ -1,6 +1,7 @@
+import css from './index.css?inline';
 import type { Checkout, CheckoutEventEmitter } from '@norce/checkout-lib';
 import React, { createContext } from 'react';
-import { useReadable } from './module';
+import { useReadable } from '@norce/module-adapter-react';
 
 export type CheckoutProviderState = {
   Checkout: typeof Checkout;
@@ -38,8 +39,11 @@ export const CheckoutProvider = ({
   value: CheckoutProviderState;
 }) => {
   return (
-    <CheckoutContext.Provider value={value}>
-      {children}
-    </CheckoutContext.Provider>
+    <>
+      <style dangerouslySetInnerHTML={{ __html: css }} />
+      <CheckoutContext.Provider value={value}>
+        {children}
+      </CheckoutContext.Provider>
+    </>
   );
 };
